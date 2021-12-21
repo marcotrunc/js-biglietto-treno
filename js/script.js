@@ -17,20 +17,30 @@ L'output del prezzo finale va messo fuori in forma umana (con massimo due decima
 const kmOfTravel = parseInt(prompt("Inserisci il numero di chilometri da compiere: ", '50'));
 console.log(kmOfTravel);
 
+// **Recupero elemento in pagina
+const cost = document.getElementById('cost');
+
 // ** Chiedo all'utente l'età del passeggero
 const userAge = parseInt(prompt("Inserisci età del passeggero:",'25'));
 console.log(userAge);
 
 // ** Calcolo il prezzo iniziale
 const priceInitial = kmOfTravel * 0.21; 
+console.log(priceInitial);
+
+// ** Messaggio di ritorno
+const message = ("Il costo del biglietto è di euro ")
 
 //** Se l'utente ha meno di 18 anni applico uno sconto 
 if (userAge < 18){
     const priceForMinors = (priceInitial -  (priceInitial * 0.20)).toFixed(2);
-    console.log(`Il prezzo da pagare è di ${priceForMinors} euro.`);
+    console.log(message + priceForMinors);
+    cost.innerHTML = (message + priceForMinors);
 } else if (userAge > 65){
     const priceForSeniors = (priceInitial -  (priceInitial * 0.60)).toFixed(2);
-    console.log(`Il prezzo da pagare è di ${priceForSeniors} euro.`);
+    console.log(message + priceForSeniors);
+    cost.innerHTML = (message + priceForseniors);
 } else { 
-    console.log(`Il prezzo da pagare è di ${(priceInitial).toFixed(2)}`);
+    console.log(message + (priceInitial).toFixed(2));
+    cost.innerHTML = (message + (priceInitial).toFixed(2));
 }
