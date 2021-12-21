@@ -32,15 +32,31 @@ console.log(priceInitial);
 const message = ("Il costo del biglietto è di euro ")
 
 //** Se l'utente ha meno di 18 anni applico uno sconto 
-if (userAge < 18){
-    const priceForMinors = (priceInitial -  (priceInitial * 0.20)).toFixed(2);
-    console.log(message + priceForMinors);
-    cost.innerHTML = (message + priceForMinors);
-} else if (userAge > 65){
-    const priceForSeniors = (priceInitial -  (priceInitial * 0.60)).toFixed(2);
-    console.log(message + priceForSeniors);
-    cost.innerHTML = (message + priceForseniors);
-} else { 
-    console.log(message + (priceInitial).toFixed(2));
-    cost.innerHTML = (message + (priceInitial).toFixed(2));
+// if (userAge < 18){
+//     const priceForMinors = (priceInitial -  (priceInitial * 0.20)).toFixed(2);
+//     console.log(message + priceForMinors);
+//     cost.innerHTML = (message + priceForMinors);
+// } else if (userAge > 65){
+//     const priceForSeniors = (priceInitial -  (priceInitial * 0.60)).toFixed(2);
+//     console.log(message + priceForSeniors);
+//     cost.innerHTML = (message + priceForseniors);
+// } else { 
+//     console.log(message + (priceInitial).toFixed(2));
+//     cost.innerHTML = (message + (priceInitial).toFixed(2));
+// }
+
+if (isNaN(kmOfTravel) || isNaN(userAge)){
+    alert('Inserire due cifre');
 }
+    if (userAge < 18){
+        const priceForMinors = (priceInitial -  (priceInitial * 0.20)).toFixed(2);
+        console.log(message + priceForMinors);
+        cost.innerHTML = (message + priceForMinors);
+    } else if (userAge > 65){
+        const priceForSeniors = (priceInitial -  (priceInitial * 0.60)).toFixed(2);
+        console.log(message + priceForSeniors);
+        cost.innerHTML = (message + priceForseniors);
+    } else { 
+        console.log(message + (priceInitial).toFixed(2));
+        cost.innerHTML = (message + (priceInitial).toFixed(2));
+    }
