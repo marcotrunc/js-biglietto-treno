@@ -81,4 +81,26 @@ if (!(userAge < 18 && userAge > 65)){
     cost.innerHTML = `${message} ${priceForSeniors} €.`;
 }
 
- 
+/* Voglio comunicare al client che il tempo rimanente per l'offerta 
+1- Recupero la data di oggi
+2- Calcolo quanti giorni mancano alla data di scadenza
+3- Stampo sul documento
+*/
+
+// #1 
+const now = new Date();
+
+// #2 
+const finalDateDay = 31;
+console.log(finalDateDay)
+
+// #3
+const currentDay = now.getDate();
+console.log('currentDay: ',currentDay);
+
+// #4 
+let dayLeft = finalDateDay - currentDay;
+console.log('dayleft:', dayLeft);
+
+//#5
+document.getElementById('dayleft').innerHTML = `Mancano ${dayLeft} giorni alla fine della promozione.`; 
